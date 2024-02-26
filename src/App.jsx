@@ -3,13 +3,16 @@ import Navbar from "./components/layout/Navbar"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import NotFound from "./pages/NotFound"
+import Footer from "./components/layout/Footer"
+import { GitHubProvider } from "./context/github/GithubContext"
 export default function App() {
   return (
     <>
+    <GitHubProvider>
     <BrowserRouter>
-    <div className="flex flex-col justify-between h-screen">
+    <div className="flex flex-col justify-between h-1/2">
       <Navbar/>
-      <main className="border bg-lime-500">
+      <main className="border bg-white-500">
       <Routes>
       <Route path="/" element = {<Home/>}/>
       <Route path="/about" element = {<About/>}/>
@@ -17,8 +20,10 @@ export default function App() {
       <Route path="/*" element = {<NotFound/>}/>
       </Routes>
       </main>
+      <Footer/>
     </div>
     </BrowserRouter>
+    </GitHubProvider>
     </>
   )
 }
