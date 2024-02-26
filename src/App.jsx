@@ -10,7 +10,7 @@ export default function App() {
     <BrowserRouter>
     <div className="flex flex-col justify-between h-1/2">
       <Navbar/>
-      <main className="border bg-lime-500">
+      <main className="border bg-white-500">
       <Routes>
       <Route path="/" element = {<Home/>}/>
       <Route path="/about" element = {<About/>}/>
